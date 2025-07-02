@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 echo "modi:: hi kcr how are you?"
 echo "kcr:: hello modi, iam fine, how are you?"
 echo "modi:: iam fine too, what are you doing?"
