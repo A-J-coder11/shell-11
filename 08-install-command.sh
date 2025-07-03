@@ -8,7 +8,7 @@ else
   echo "You are root, proceeding with installation."
 fi
 
-dnf install mysql -y
+dnf list installed mysql 
 
 if [ $? -eq 0 ]; then
   echo "MySQL installed successfully."
