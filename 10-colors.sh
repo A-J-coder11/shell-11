@@ -1,5 +1,5 @@
 #!/bin/bash
 
-echo "\e[32mHello World!"
+echo "\e[32m Hello World!"
 
 echo "Hello no colors"
