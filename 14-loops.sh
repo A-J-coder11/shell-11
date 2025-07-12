@@ -11,7 +11,6 @@ LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME.log"
 PACKAGES=("mysql" "python" "nginx" "httpd")
 
 mkdir -p $LOGS_FOLDER
-
 echo "Script started executing at: $(date)" | tee -a $LOG_FILE
 
 if [ $USERID -ne 0 ]; then
@@ -32,7 +31,8 @@ VALIDATE(){
   fi
 }
 
-for Package in ${PACKAGES[@]}
+# for Package in ${PACKAGES[@]}
+for package in $@
 do
     dnf list installed $Package &>>$LOG_FILE
     if [ $? -ne 0 ]
