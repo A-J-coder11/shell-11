@@ -23,7 +23,8 @@ fi
 
 # validate is a function and takes input as exit status and tries to install 
 VALIDATE(){
-  if [ $1 -eq 0 ]; then
+  if [ $1 -eq 0 ]
+   then
     echo -e "$G $2 installed successfully.$N" | tee -a $LOG_FILE
   else
     echo -e "$R Failed to install $2.$N" | tee -a $LOG_FILE
@@ -34,8 +35,9 @@ VALIDATE(){
 for Package in ${PACKAGES[@]}
 do
     dnf list installed $Package &>>$LOG_FILE
-    if [ $? -eq 0 ]; then
-      echo -e "$Y $package is not installed going to install it.$N" | tee -a $LOG_FILE
+    if [ $? -ne 0 ]
+     then
+      echo -e " $package is not installed going to install it." | tee -a $LOG_FILE
       dnf install $package -y &>>$LOG_FILE
       VALIDATE $? "$package" 
     else
